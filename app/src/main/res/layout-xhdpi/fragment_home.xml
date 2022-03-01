@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@drawable/back">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:titleEnabled="false">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/adsViewPager"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:paddingHorizontal="30dp"
+                    app:layout_constraintDimensionRatio="16:8"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/view_frame_bg">
+
+            <com.skydoves.elasticviews.ElasticImageView
+                android:id="@+id/logo"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_img_ucell"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <com.skydoves.elasticviews.ElasticLayout
+                android:id="@+id/layoutLang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_uzb"
+                android:layout_marginEnd="15dp"
+                app:layout_duration="250"
+                app:layout_scale="0.8"
+                app:layout_constraintTop_toTopOf="@id/logo"
+                app:layout_constraintBottom_toBottomOf="@id/logo"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgLang"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/ic_uzb"
+                    android:layout_gravity="center_horizontal"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="@color/grey"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/text_change_lang"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="35dp"/>
+
+            </com.skydoves.elasticviews.ElasticLayout>
+
+            <com.skydoves.elasticviews.ElasticLayout
+                android:id="@+id/layoutUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                app:layout_duration="250"
+                app:layout_scale="0.8"
+                app:layout_constraintTop_toTopOf="@id/logo"
+                app:layout_constraintBottom_toBottomOf="@id/logo"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="@color/grey"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/text_cabinet"
+                    android:drawableTop="@drawable/ic_user"
+                    android:drawablePadding="2dp"/>
+
+            </com.skydoves.elasticviews.ElasticLayout>
+
+            <com.skydoves.elasticviews.ElasticCardView
+                android:id="@+id/cardInternet"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginTop="30dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="15dp"
+                app:cardView_duration="250"
+                app:cardView_scale="0.8"
+                app:layout_constraintTop_toBottomOf="@id/logo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/cardSms">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/saleInternet"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:visibility="gone"
+                    android:src="@drawable/ic_sale_purple"
+                    android:layout_gravity="end"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15dp"
+                    android:clickable="false"
+                    android:focusable="false"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardElevation="5dp"
+                    app:cardCornerRadius="10dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_internet"/>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginBottom="15dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="@string/text_internet"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp" />
+
+            </com.skydoves.elasticviews.ElasticCardView>
+
+            <com.skydoves.elasticviews.ElasticCardView
+                android:id="@+id/cardSms"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginTop="30dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="15dp"
+                app:cardView_duration="250"
+                app:cardView_scale="0.8"
+                app:layout_constraintTop_toBottomOf="@id/logo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cardInternet">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/saleMinute"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:visibility="gone"
+                    android:src="@drawable/ic_sale_purple"
+                    android:layout_gravity="end"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15dp"
+                    android:clickable="false"
+                    android:focusable="false"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardElevation="5dp"
+                    app:cardCornerRadius="10dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_sms"/>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="@string/text_minutes_sms"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginBottom="15dp"/>
+
+            </com.skydoves.elasticviews.ElasticCardView>
+
+            <com.skydoves.elasticviews.ElasticCardView
+                android:id="@+id/cardRate"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginTop="20dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="15dp"
+                app:cardView_duration="250"
+                app:cardView_scale="0.8"
+                app:layout_constraintTop_toBottomOf="@id/cardSms"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/cardService">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/saleRate"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:visibility="gone"
+                    android:src="@drawable/ic_sale_purple"
+                    android:layout_gravity="end"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15dp"
+                    android:clickable="false"
+                    android:focusable="false"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardElevation="5dp"
+                    app:cardCornerRadius="10dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_rate"/>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="@string/text_rate"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginBottom="15dp"/>
+
+            </com.skydoves.elasticviews.ElasticCardView>
+
+            <com.skydoves.elasticviews.ElasticCardView
+                android:id="@+id/cardService"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginTop="20dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="15dp"
+                app:cardView_duration="250"
+                app:cardView_scale="0.8"
+                app:layout_constraintTop_toBottomOf="@id/cardSms"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cardRate">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15dp"
+                    android:clickable="false"
+                    android:focusable="false"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardElevation="5dp"
+                    app:cardCornerRadius="10dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_service"/>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="@string/text_service"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginBottom="15dp"/>
+
+            </com.skydoves.elasticviews.ElasticCardView>
+
+            <com.skydoves.elasticviews.ElasticCardView
+                android:id="@+id/cardBalance"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="30dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="15dp"
+                app:cardView_duration="250"
+                app:cardView_scale="0.8"
+                app:layout_constraintTop_toBottomOf="@id/cardRate"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/cardMore">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15dp"
+                    android:clickable="false"
+                    android:focusable="false"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardElevation="5dp"
+                    app:cardCornerRadius="10dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_phone"/>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="@string/text_ussd_codes"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginBottom="15dp"/>
+
+            </com.skydoves.elasticviews.ElasticCardView>
+
+            <com.skydoves.elasticviews.ElasticCardView
+                android:id="@+id/cardMore"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="30dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="15dp"
+                app:cardView_duration="250"
+                app:cardView_scale="0.8"
+                app:layout_constraintTop_toBottomOf="@id/cardService"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cardBalance">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15dp"
+                    android:clickable="false"
+                    android:focusable="false"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardElevation="5dp"
+                    app:cardCornerRadius="10dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_more"/>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="@string/text_more"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginBottom="15dp"/>
+
+            </com.skydoves.elasticviews.ElasticCardView>
+
+            <androidx.appcompat.widget.AppCompatRatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginVertical="20dp"
+                android:layout_gravity="start"
+                style="?android:attr/ratingBarStyleIndicator"
+                android:isIndicator="false"
+                android:rating="4"
+                android:progressTint="@color/colorYellow"
+                android:progressBackgroundTint="@color/grey"
+                android:secondaryProgressTint="@color/colorYellow"
+                app:layout_constraintTop_toBottomOf="@id/cardMore"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.skydoves.elasticviews.ElasticButton
+                android:id="@+id/btnSend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:paddingHorizontal="15dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/text_review"
+                app:button_duration="250"
+                app:button_scale="0.8"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ratingBar"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

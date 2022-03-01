@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="minute_text_info">
+        <![CDATA[
+
+            <p>To\'plam amal qilish muddati – faollashtirilgan kundan boshlab 30 kalendar kuni.</p>
+            <p>Faollashtirilgan to´plamda daqiqalar qoldig´ini bilish:</p>
+            <p>USSD-buyruq: <b>*103#</b></p>
+            <p>SMS-yordamchi: <b>616020</b> raqamiga <i>3</i>.</p>
+            <b>Izohlar:</b>
+             <ul>
+                <li>
+                <p>
+                     &nbsp;&nbsp;&nbsp;Daqiqalar to\'plamlarini «Start», «Besh», «Plus», «Baraka», «Optima», «Super Optima», «Maxi» (eski), «777», «555», «Optima 333» va «Terminal» &nbsp;tariff rejalarida bo\'lgan abonentlar – jismoniy shaxslar faollashtirilshlari mumkin;<br>
+                </p>
+             </li>
+                <li>
+                <p>
+                     &nbsp;&nbsp;&nbsp;To\'lpamlarga kiritilgan daqiqalar tarmoq ichida, boshqa mobil operator tarmoqlariga va shahar raqamlariga chiquvchi qo\'ng\'iroqlar uchun mo\'ljallangan;
+                </p>
+             </li>
+                <li>
+                <p>
+                     &nbsp;&nbsp;&nbsp;To\'plamga kiritilgan daqiqalar hajmi abonent bandlanganligi/bandlanmaganligidan qat\'iy nazar 30 kalendar kuni davomida sarflanishi mumkin;
+                </p>
+             </li>
+                <li>
+                <p>
+                     &nbsp;&nbsp;&nbsp;To\'plam faollashtirilishi uchun abonent hisobida yetarlicha mablag bo\'lishi shart, ya\'ni u faollashganidan keyin abonent balansida kamida 0.01 sh.b qolishi kerak;
+                </p>
+             </li>
+                <li>
+                <p>
+                     &nbsp;&nbsp;&nbsp;To\'plam faollashgani haqida SMS-ogohlantiruv keladi;
+                </p>
+             </li>
+                <li>
+                <p>
+                     &nbsp;&nbsp;&nbsp;Xarid qilingan barcha to\'plamlar hajmi umumiylashtiriladi va uning amal qilish muddati ohirgi xarid qilingan to\'plamdan boshlab 30 kunni tashkil qiladi;
+                </p>
+             </li>
+                <li>
+                <p>
+                     &nbsp;&nbsp;&nbsp;To\'plam yoki tarif rejasi bo\'yicha beriladigan daqiqalar yakunlanganidan so\'ng qo\'ng\'iroqlar belgilangan tariflar bo\'yicha narxlanadi;
+                </p>
+             </li>
+                <li>
+                <p>
+                     &nbsp;&nbsp;&nbsp;Tarif rejasi o\'zgartirilganda daqiqalar to\'plami saqlanib qoladi;
+                </p>
+             </li>
+                <li>
+                <p>
+                     &nbsp;&nbsp;&nbsp;To\'plamdagi daqiqalar O\'zbekiston Respublikasi bo\'yicha qo\'ng\'iroqlar uchun mo\'ljallangan;
+                </p>
+             </li>
+                <li>
+                <p>
+                     &nbsp;&nbsp;&nbsp;Daqiqalar to\'plamlari abonent faqat O\'zbekiston hududida, "UMS" MChJ tarmog\'ida bo\'lgandagina amal qiladi;
+                </p>
+             </li>
+                <li>
+                <p>
+                     &nbsp;&nbsp;&nbsp;Xalqaro chiquvchi qo\'ng\'iroqlar va kontent-provayder xizmatlariga qo\'ng´iroqlar ular uchun belgilngan tariflar bo\'yicha narxlanadi;
+                </p>
+             </li>
+                <li>
+                <p>
+                     &nbsp;&nbsp;&nbsp;Daqiqalar sarflanish tartibi:
+                </p>
+             </li>
+                <ul>
+                    <li>
+                    <p>
+                         &nbsp;&nbsp;&nbsp;"Super 0" xizmati&gt;Tarif rejasi doirasidagi to\'plam&gt;Xarid qilingan daqiqalar to\'plami;
+                    </p>
+             </li>
+                </ul>
+                <li>
+                <p>
+                     &nbsp;&nbsp;&nbsp;Hisob-kitoblar O\'zmarkazbankning to\'lov kunidagi kursi bo\'yicha amalga oshiriladi;
+                </p>
+             </li>
+                <li>
+                <p>
+                     &nbsp;&nbsp;&nbsp;Narxlar barcha soliqlarni inobarga olgan ko\'rsatilgan.
+                </p>
+             </li>
+            </ul>
+        ]]>
+
+         <![CDATA[
+            <p>Pakеt narxi xizmat faollashtirilganda hisoblab olinadi.</p>
+            <p>Faollashtirilgan «SMS-pakеti»da qolgan xabarlar sonini bilish uchun USSD-buyrug‘ini:</p>
+            <p><b>*111*018#</b> yoki <b>616018</b> raqamiga <i>3</i> soni bilan SMS-xabar jo‘natish zarur.<p>
+            <b>Izoh</b>
+             <ul>
+      <li>&nbsp;&nbsp;&nbsp;Kontеnt-provaydеr xizmatiga Xalqaro chiquvchi SMS-xabarlar va SMS-so‘rovlar ularga o‘rnatilgan tariflar bo‘yicha tariflanadi.</li>
+
+      <li>&nbsp;&nbsp;&nbsp;SMS-xabarlarning muvofiq hajmidan pakеt faollashtirilgan kundan boshlab, abonеnt bu vaqtda blokirovkada bo‘lishidan qat’iy nazar, 30 kalеndar kun muddati mobaynida foydalanish mumkin.</li>
+
+      <li>&nbsp;&nbsp;&nbsp;SMS-pakеtlarga pakеt faollashtirilganidan so‘ng abonеnt hisobida 0,01 sh.b kam bo‘lmagan mablag‘ bo‘lishi sharti bilan ulanish mumkin. </li>
+
+      <li>&nbsp;&nbsp;&nbsp;Sotib olingan pakеtlar o‘rtasidagi vaqt oralig‘i kamida 10 daqiqa bo‘lishi zarur.</li>
+
+      <li>&nbsp;&nbsp;&nbsp;Sotib olingan barcha pakеtlar haqi jamlanadi, foydalanish muddati esa oxirgi sotib olingan pakеt muddati tugaguniga va sotib olingan kundan boshlab 30 kunga qadar cho‘ziladi.</li>
+
+      <li>&nbsp;&nbsp;&nbsp;Xizmat – jismoniy va yuridik shaxs bo‘lgan barcha abonеntlarga barcha tarif rejalarda amal qiladi.</li>
+
+      <li>&nbsp;&nbsp;&nbsp;Pakеtlar faqat O‘zbekiston hududida «UMS» MCHJ tarmog‘i abonеntlariining O‘zbekiston mobil operatorlari abonentlari uchun amal qiladi.</li>
+    </ul>
+        ]]>
+    </string>
+
+    <string name="service_purchase">Подключить</string>
+    <string name="service_cancel">Отключить</string>
+    <string name="dialog_permission_settings">Нужен доступ на вызов</string>
+    <string name="confirm_ask">Вы действительно хотите перейти на тарифный план:</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text_internet">Internet</string>
+    <string name="text_minutes_sms">Daqiqa/SMS</string>
+    <string name="text_rate">Tariflar</string>
+    <string name="text_service">Xizmatlar</string>
+    <string name="text_balance">Balans</string>
+    <string name="text_more">Foydali</string>
+    <string name="text_load_data">Maʼlumotlar yuklanmoqda</string>
+    <string name="text_data_loaded">Maʼlumotlar yuklandi</string>
+    <string name="text_data_loaded_err">Internet ulanishida nosozlik bor</string>
+    <string name="text_sum">so‘m</string>
+    <string name="text_mb">MB</string>
+    <string name="text_day">kunga</string>
+    <string name="text_minute">Daqiqalar</string>
+    <string name="text_minute_small">daqiqa</string>
+    <string name="text_config">Sozlanmalar</string>
+    <string name="text_get_configs">Mobil internet sozlamalarni olish</string>
+    <string name="text_on_net">Mobil internet xizmatini yoqish</string>
+    <string name="text_off_net">Mobil internet xizmatini o‘chirish</string>
+    <string name="text_on_on_net">OnNet to‘plamini o‘chirish</string>
+    <string name="text_packets">Paketlar</string>
+    <string name="text_night_packets">Tungi paketlar</string>
+    <string name="text_night_dirve">Tungi Drive</string>
+    <string name="text_day_packets">Kunlik paketlar</string>
+    <string name="text_week_packets">Haftalik paketlar</string>
+    <string name="text_sale_packets">Aksiya</string>
+    <string name="sure_confirm">Siz rozimisiz?</string>
+    <string name="cancel">Orqaga</string>
+    <string name="yes_dialog">Xa</string>
+    <string name="confirm_service_ask">Quyidagi xizmatni yoqishga rozimisiz?</string>
+    <string name="text_sms">SMS</string>
+    <string name="text_check_packets">Qoldiqni tekshirish</string>
+    <string name="text_moth_pay">To`lov</string>
+    <string name="text_over">O‘tish</string>
+    <string name="text_push_minutes">Daqiqalar</string>
+    <string name="text_traffic_count">Trafik hajmi</string>
+    <string name="confirm_cancel_service_ask">Вы действительно хотите отключить данную услугу?</string>
+    <string name="text_telegram_chanel">Telegram kanal</string>
+    <string name="text_wallet">Oxirgi to‘lov</string>
+    <string name="text_expenses">Mening xarajatlarim</string>
+    <string name="text_residue">Internet qoldig‘i</string>
+    <string name="text_my_number">Mening raqamim</string>
+    <string name="text_my_all_numbers">Mening barcha raqamlarim</string>
+    <string name="text_check_services">Yoqilgan xizmatlarni tekshirish</string>
+    <string name="text_other_apps">Bizning boshqa dasturlarimiz</string>
+    <string name="text_review">Baholash</string>
+    <string name="text_buy">Olish</string>
+    <string name="text_cabinet">Kabinet</string>
+    <string name="text_change_lang">RUS</string>
+    <string name="text_err_download">Yuklash paytida xatolik yuz berdi</string>
+    <string name="text_app_loading">Ilova yuklanmoqda…</string>
+    <string name="text_welcome">Xush kelibsiz!</string>
+    <string name="text_code">Kod:</string>
+    <string name="text_ussd_codes">Ussd Kodlar</string>
+    <string name="text_check_rate">Tarifni tekshirish</string>
+    <string name="text_check_balance">Balansni tekshirish</string>
+    <string name="text_rate_type">oyiga/kuniga</string>
+    <string name="text_moth">oyiga</string>
+</resources>

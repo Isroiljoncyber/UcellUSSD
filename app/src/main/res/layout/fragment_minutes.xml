@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/back"
+    tools:context=".ui.fragment.InternetFragment">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize">
+
+        <com.skydoves.elasticviews.ElasticImageView
+            android:id="@+id/imgBack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="15dp"
+            android:src="@drawable/ic_back"
+            app:imageView_scale="0.7"
+            app:imageView_duration="300"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textSize="22sp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/text_minutes_sms"
+            android:layout_gravity="center"/>
+
+        <com.skydoves.elasticviews.ElasticImageView
+            android:id="@+id/imgInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="15dp"
+            android:layout_gravity="end"
+            android:src="@drawable/ic_info"
+            app:imageView_scale="0.7"
+            app:imageView_duration="300"/>
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="?actionBarSize"
+        android:background="@drawable/view_frame_bg">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/layoutInfo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:padding="20dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvInfo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_medium"/>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <com.ogaclejapan.smarttablayout.SmartTabLayout
+            android:id="@+id/tabs"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="5dp"
+            android:layout_gravity="center"
+            app:stl_indicatorAlwaysInCenter="false"
+            app:stl_indicatorWithoutPadding="true"
+            app:stl_indicatorInFront="false"
+            app:stl_indicatorGravity="bottom"
+            app:stl_indicatorThickness="4dp"
+            app:stl_indicatorWidth="auto"
+            app:stl_indicatorColor="@color/colorPrimary"
+            app:stl_indicatorCornerRadius="2dp"
+            app:stl_overlineColor="@android:color/transparent"
+            app:stl_overlineThickness="0dp"
+            app:stl_underlineColor="@android:color/transparent"
+            app:stl_underlineThickness="1dp"
+            app:stl_dividerColor="@android:color/transparent"
+            app:stl_dividerThickness="1dp"
+            app:stl_defaultTabBackground="?attr/selectableItemBackground"
+            app:stl_defaultTabTextAllCaps="true"
+            app:stl_defaultTabTextSize="12sp"
+            app:stl_defaultTabTextColor="@color/colorPrimaryDark"
+            app:stl_defaultTabTextHorizontalPadding="16dp"
+            app:stl_defaultTabTextMinWidth="0dp"
+            app:stl_distributeEvenly="false"
+            app:stl_clickable="true"
+            app:stl_titleOffset="24dp" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPagerNet"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+</FrameLayout>

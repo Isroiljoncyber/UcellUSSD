@@ -1,0 +1,169 @@
+<resources>
+    <string name="app_name" translatable="false">Ucell USSD</string>
+
+    <string name="minute_text_info">
+        <![CDATA[
+            <p>Срок действия пакета - 30 календарных дней с момента активации</p>
+            <p>Для того, чтобы узнать об оставшемся количестве минут в активированном "Пакете минут" необходимо отправить USSD-команду: *103# или отправить SMS-сообщение с цифрой 3 на номер 616020.</p>
+            <b>Примечание:</b>
+             <ul>
+            <li>
+            <p>
+                 &nbsp;&nbsp;&nbsp;Пакет минут доступен для подключения только физическим лицам на тарифных планах «Start», «Besh», «Plus», «Baraka», «Optima», «Super Optima», «Maxi», «777»,«555», «Optima 333» и «Terminal».<br>
+            </p>
+         </li>
+            <li>
+            <p>
+                 &nbsp;&nbsp;&nbsp;Включенные в пакет минуты предназначены для исходящих звонков внутри сети, на номера других мобильных операторов и на городские номера.
+            </p>
+         </li>
+            <li>&nbsp;&nbsp;&nbsp;Объем включенных в пакет минут должен быть использован в течение 30 календарных дней со дня активации пакета, вне зависимости от срока нахождения абонента во временной блокировке в этот период. </li>
+            <li>
+            <p>
+                 &nbsp;&nbsp;&nbsp;Подключение пакета минут, возможно, при условии, что после активации пакета счет абонента должен составлять не менее 0,01 y.e.
+            </p>
+         </li>
+            <li>
+            <p>
+                 &nbsp;&nbsp;&nbsp;При успешной активации пакета поступит SMS-уведомление.
+            </p>
+         </li>
+            <li>
+            <p>
+                 &nbsp;&nbsp;&nbsp;Объем всех приобретенных разовых пакетов суммируется, а срок использования продлевается до срока окончания последнего купленного пакета и составляет 30 дней с момента его покупки.
+            </p>
+         </li>
+            <li>
+            <p>
+                 &nbsp;&nbsp;&nbsp;По окончанию количества минут, начисляемых в рамках тарифного плана, или истечению срока пакета минут, исходящие вызовы тарифицируется согласно установленным тарифам.
+            </p>
+         </li>
+            <li>
+            <p>
+                 &nbsp;&nbsp;&nbsp;Условия использования купленных пакетов не изменяются при смене тарифного плана.
+            </p>
+         </li>
+            <li>
+            <p>
+                 &nbsp;&nbsp;&nbsp;Пакеты минут, предоставляются для осуществления исходящих звонков по Республике Узбекистан (абонентам мобильных операторов Узбекистана и на городские номера).
+            </p>
+         </li>
+            <li>
+            <p>
+                 &nbsp;&nbsp;&nbsp;Пакеты минут действительны только при нахождении абонента в сети ООО «UMS» на территории Узбекистана.
+            </p>
+         </li>
+            <li>
+            <p>
+                 &nbsp;&nbsp;&nbsp;Международные исходящие звонки и звонки на услуги контент-провайдеров тарифицируются по установленным для них тарифам.
+            </p>
+         </li>
+            <li>
+            <p>
+                 &nbsp;&nbsp;&nbsp;Приоритет расходования минут:
+            </p>
+         </li>
+            <ul>
+                <li>
+                &nbsp;&nbsp;&nbsp;Услуга "Super 0"&gt;Трафик в рамках тарифного плана&gt;Трафик из купленного пакета минут </li>
+            </ul>
+            <li>
+            <p>
+                 &nbsp;&nbsp;&nbsp;Расчет производится в сумах по курсу ЦБ РУз на день оплаты;
+            </p>
+         </li>
+            <li>
+            <p>
+                 &nbsp;&nbsp;&nbsp;Цены указаны с учетом всех налогов.
+            </p>
+         </li>
+        </ul>
+        ]]>
+
+         <![CDATA[
+            <p>Стоимость пакета снимается при активации.</p>
+            Для того, чтобы узнать об оставшемся количестве сообщений в активированном «SMS-пакете» необходимо отправить USSD-команду: <b>*111*018#</b> или отправить SMS-сообщение с цифрой <i>3</i> на номер <b>616018</b>
+ <ul>
+          <li>&nbsp;&nbsp;&nbsp;Международные исходящие SMS-сообщения и SMS-запросы на услуги контент-провайдеров тарифицируются по установленным для них тарифам.</li>
+
+          <li>&nbsp;&nbsp;&nbsp;Соответствующий объем SMS-сообщений может быть использован в течение 30 календарных дней со дня активации пакета, вне зависимости от срока нахождения абонента во временной блокировке в этот период.</li>
+
+          <li>&nbsp;&nbsp;&nbsp;Подключение SMS-пакетов возможно при условии, что после активации пакета счет абонента должен составлять не менее 0,01 y.e</li>
+
+          <li>&nbsp;&nbsp;&nbsp;Временной интервал между приобретениями пакетов должен быть не менее 10 минут.</li>
+
+          <li>&nbsp;&nbsp;&nbsp;Объем всех приобретенных пакетов суммируется, а срок использования продлевается до срока окончания последнего купленного пакета и составляет 30 дней с момента его покупки.</li>
+
+          <li>&nbsp;&nbsp;&nbsp;Услуга доступна для абонентов - физических лиц и юридических лиц, обслуживающихся на всех тарифных планах.</li>
+
+          <li>&nbsp;&nbsp;&nbsp;Пакеты действительны только при нахождении абонента в сети ООО «UMS» на территории Узбекистана и для отправки только на абонентов сотовых операторов Узбекистана.</li>
+        <p><b>Цены указаны с учетом всех налогов.</b></p>
+        </ul>
+]]>
+    </string>
+
+    <string name="service_purchase">Подключить</string>
+    <string name="service_cancel">Отключить</string>
+    <string name="dialog_permission_settings">Нужен доступ на вызов</string>
+    <string name="confirm_ask">Вы действительно хотите перейти на тарифный план:</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text_internet">Интернет</string>
+    <string name="text_minutes_sms">Минуты/SMS</string>
+    <string name="text_rate">Тарифы</string>
+    <string name="text_service">Сервисы</string>
+    <string name="text_balance">Баланс</string>
+    <string name="text_more">Полезный</string>
+    <string name="text_load_data">Данные загружаются</string>
+    <string name="text_data_loaded">Данные загружены</string>
+    <string name="text_data_loaded_err">Ошибка при подключение к интернету</string>
+    <string name="text_sum">сум</string>
+    <string name="text_mb">МБ</string>
+    <string name="text_day">сутка</string>
+    <string name="text_minute">Минуты</string>
+    <string name="text_minute_small">минут</string>
+    <string name="text_config">Настройки</string>
+    <string name="text_get_configs">Получить настройки интернета</string>
+    <string name="text_on_net">Включить мобилный интернет</string>
+    <string name="text_off_net">Отключить мобилный интернет</string>
+    <string name="text_on_on_net">Отключить пакета OnNet</string>
+    <string name="text_packets">Пакеты</string>
+    <string name="text_night_packets">Ночные пакеты</string>
+    <string name="text_night_dirve">Ночной Drive</string>
+    <string name="text_day_packets">Суточный пакеты</string>
+    <string name="text_week_packets">Недельный пакеты</string>
+    <string name="text_sale_packets">Акция</string>
+    <string name="sure_confirm">Вы уверены?</string>
+    <string name="cancel">Отмена</string>
+    <string name="yes_dialog">Да</string>
+    <string name="confirm_service_ask">Вы действительно хотите подключить данную услугу?</string>
+    <string name="text_sms">СМС</string>
+    <string name="text_check_packets">Проверить остаток</string>
+    <string name="text_moth_pay">Оплата в</string>
+    <string name="text_over">Перейти</string>
+    <string name="text_push_minutes">Минуты</string>
+    <string name="text_traffic_count">Трафик</string>
+    <string name="confirm_cancel_service_ask">Вы действительно хотите отключить данную услугу?</string>
+    <string name="text_telegram_chanel">Telegram канал</string>
+    <string name="text_wallet">Последний платеж</string>
+    <string name="text_expenses">Мои расходы</string>
+    <string name="text_residue">Остаток трафика</string>
+    <string name="text_my_number">Мой номер</string>
+    <string name="text_my_all_numbers">Все мои номера</string>
+    <string name="text_check_services">Проверка активных услуг</string>
+    <string name="text_other_apps">Другие наши программы</string>
+    <string name="text_review">Оценить</string>
+    <string name="text_buy">Купить</string>
+    <string name="text_cabinet">Кабинет</string>
+    <string name="text_change_lang">УЗБ</string>
+    <string name="text_err_download">Произошло ошибка при загрузке</string>
+    <string name="text_app_loading">Приложение загружается…</string>
+    <string name="text_welcome">Добро пожаловать!</string>
+    <string name="text_code">Код:</string>
+    <string name="text_ussd_codes">Ussd Коды</string>
+    <string name="text_check_rate">Проверка тарифа</string>
+    <string name="text_check_balance">Проверка баланса</string>
+    <string name="text_rate_type">месяц/день</string>
+    <string name="text_moth">месяц</string>
+
+
+</resources>

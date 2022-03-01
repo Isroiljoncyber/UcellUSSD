@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/view_dialog_bg"
+    android:orientation="vertical"
+    android:layout_marginHorizontal="15dp"
+    android:paddingBottom="10dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/view_text_view_bg"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/text_config"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="10dp"
+        android:drawablePadding="15dp"
+        android:drawableStart="@drawable/ic_config_small"/>
+
+    <com.skydoves.elasticviews.ElasticLayout
+        android:id="@+id/tvGetConfigs"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginVertical="10dp"
+        android:background="@drawable/view_layout_bg"
+        app:layout_duration="300"
+        app:layout_scale="0.8">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="5dp"
+            android:text="@string/text_get_configs"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/roboto_bold"/>
+
+    </com.skydoves.elasticviews.ElasticLayout>
+
+    <com.skydoves.elasticviews.ElasticLayout
+        android:id="@+id/tvOnNet"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginVertical="10dp"
+        android:background="@drawable/view_layout_bg"
+        app:layout_duration="300"
+        app:layout_scale="0.8">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="5dp"
+            android:text="@string/text_on_net"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/roboto_bold"/>
+
+    </com.skydoves.elasticviews.ElasticLayout>
+
+    <com.skydoves.elasticviews.ElasticLayout
+        android:id="@+id/tvOffNet"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginVertical="10dp"
+        android:background="@drawable/view_layout_bg"
+        app:layout_duration="300"
+        app:layout_scale="0.8">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="5dp"
+            android:text="@string/text_off_net"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/roboto_bold"/>
+
+    </com.skydoves.elasticviews.ElasticLayout>
+
+    <com.skydoves.elasticviews.ElasticLayout
+        android:id="@+id/tvOffOnNet"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginVertical="10dp"
+        android:background="@drawable/view_layout_bg"
+        app:layout_duration="300"
+        app:layout_scale="0.8">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="5dp"
+            android:text="@string/text_on_on_net"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/roboto_bold"/>
+
+    </com.skydoves.elasticviews.ElasticLayout>
+
+</LinearLayout>

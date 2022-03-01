@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="300dp"
+        android:layout_height="420dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/img_sale"/>
+
+    <com.skydoves.elasticviews.ElasticCardView
+        android:id="@+id/cardBuy"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginVertical="20dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_gravity="center_horizontal"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="10dp"
+        app:cardView_duration="250"
+        app:cardView_scale="0.8">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textSize="24sp"
+            android:text="@string/text_buy"
+            android:layout_gravity="center"
+            android:fontFamily="@font/roboto_bold"/>
+
+    </com.skydoves.elasticviews.ElasticCardView>
+
+</LinearLayout>

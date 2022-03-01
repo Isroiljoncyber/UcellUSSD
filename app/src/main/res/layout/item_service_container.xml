@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="15dp"
+    android:layout_marginVertical="10dp"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="10dp"
+        android:paddingTop="10dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:textColor="@color/colorPrimary"
+            android:fontFamily="@font/roboto_bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <at.blogc.android.views.ExpandableTextView
+            android:id="@+id/tvInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="4"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/roboto_medium"
+            app:animation_duration="550"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+        <com.skydoves.elasticviews.ElasticLayout
+            android:id="@+id/layoutCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:visibility="invisible"
+            app:layout_scale="0.8"
+            app:layout_duration="300"
+            app:layout_constraintTop_toBottomOf="@id/tvInfo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/service_cancel"
+                android:drawableStart="@drawable/ic_close"
+                android:drawablePadding="10dp"
+                android:gravity="center" />
+
+        </com.skydoves.elasticviews.ElasticLayout>
+
+        <com.skydoves.elasticviews.ElasticLayout
+            android:id="@+id/layoutConnect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_scale="0.8"
+            app:layout_duration="300"
+            app:layout_constraintTop_toBottomOf="@id/tvInfo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/green"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/service_purchase"
+                android:drawableStart="@drawable/ic_cart"
+                android:drawablePadding="10dp"
+                android:gravity="center" />
+
+        </com.skydoves.elasticviews.ElasticLayout>
+
+        <com.skydoves.elasticviews.ElasticImageView
+            android:id="@+id/imgDown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_down"
+            android:padding="15dp"
+            app:imageView_duration="300"
+            app:imageView_scale="0.8"
+            app:layout_constraintTop_toBottomOf="@id/tvInfo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/layoutCancel"
+            app:layout_constraintEnd_toStartOf="@id/layoutConnect"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
