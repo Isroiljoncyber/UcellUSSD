@@ -77,7 +77,8 @@ class ServiceFragment : ScopedFragment(R.layout.fragment_service), ServiceAction
         btnCheck.setOnClickListener {
             if (unitProvider.getLang()) {
                 ussdCall(UssdCodes.balanceUssdRu, it.context)
-            } else ussdCall(UssdCodes.balanceUssdUz, it.context)
+            } else
+                ussdCall(UssdCodes.balanceUssdUz, it.context)
         }
     }
 
