@@ -35,7 +35,7 @@ class AppModule {
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
             .client(okHttpClient)
-            .baseUrl("https://raw.githubusercontent.com/Javoh29/Mobiuz/master/")
+            .baseUrl("https://isroiljoncyber.github.io/ucellJsonRep/")
             .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .addConverterFactory(GsonConverterFactory.create())
             .build()

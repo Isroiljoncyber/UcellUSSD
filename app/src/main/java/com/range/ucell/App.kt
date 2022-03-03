@@ -33,8 +33,11 @@ class App: MultiDexApplication(), KodeinAware {
             bind() from singleton { MobiuzDatabase(instance()) }
             bind() from singleton { instance<MobiuzDatabase>().mobiuzDao() }
             bind() from singleton { apiService }
+
             bind<MobiuzRepository>() with singleton { MobiuzRepositoryImpl(instance(), instance(), instance()) }
+
             bind<UnitProvider>() with singleton { UnitProviderImpl(instance(), instance()) }
+
         }
 
 

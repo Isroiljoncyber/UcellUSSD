@@ -28,48 +28,67 @@ class InternetFragment : Fragment(R.layout.fragment_internet) {
         if (sale != null) {
             when(sale?.type) {
                 "0" -> {
-                    adapter.addFragment(SingleFragment(0, false), getString(R.string.text_packets))
-                    adapter.addFragment(SingleFragment(1, false), getString(R.string.text_night_packets))
-                    adapter.addFragment(SingleFragment(2, false), getString(R.string.text_night_dirve))
-                    adapter.addFragment(SingleFragment(3, false), getString(R.string.text_day_packets))
-                    adapter.addFragment(SingleFragment(4, false), getString(R.string.text_week_packets))
+                    adapter.addFragment(SingleFragment(0, false), getString(R.string.text_month_packets))
+                    adapter.addFragment(SingleFragment(1, false), getString(R.string.text_week_packets))
+                    adapter.addFragment(SingleFragment(2, false), getString(R.string.text_day_packets))
+                    adapter.addFragment(SingleFragment(3, false), getString(R.string.text_night_packets))
+                    adapter.addFragment(SingleFragment(4, false), getString(R.string.text_hour_packets))
+                    adapter.addFragment(SingleFragment(5, false), getString(R.string.text_tax_ix_packets))
+                    adapter.addFragment(SingleFragment(6, false), getString(R.string.text_infinite_packets))
+                    adapter.addFragment(SingleFragment(7, false), getString(R.string.text_modem_packets))
                 }
                 "1" -> {
-                    adapter.addFragment(SingleFragment(0, false), getString(R.string.text_night_packets))
-                    adapter.addFragment(SingleFragment(1, false), getString(R.string.text_packets))
-                    adapter.addFragment(SingleFragment(2, false), getString(R.string.text_night_dirve))
-                    adapter.addFragment(SingleFragment(3, false), getString(R.string.text_day_packets))
-                    adapter.addFragment(SingleFragment(4, false), getString(R.string.text_week_packets))
+                    adapter.addFragment(SingleFragment(0, false), getString(R.string.text_month_packets))
+                    adapter.addFragment(SingleFragment(1, false), getString(R.string.text_week_packets))
+                    adapter.addFragment(SingleFragment(2, false), getString(R.string.text_day_packets))
+                    adapter.addFragment(SingleFragment(3, false), getString(R.string.text_night_packets))
+                    adapter.addFragment(SingleFragment(4, false), getString(R.string.text_hour_packets))
+                    adapter.addFragment(SingleFragment(5, false), getString(R.string.text_tax_ix_packets))
+                    adapter.addFragment(SingleFragment(6, false), getString(R.string.text_infinite_packets))
+                    adapter.addFragment(SingleFragment(7, false), getString(R.string.text_modem_packets))
                 }
                 "2" -> {
-                    adapter.addFragment(SingleFragment(0, false), getString(R.string.text_night_dirve))
-                    adapter.addFragment(SingleFragment(1, false), getString(R.string.text_packets))
-                    adapter.addFragment(SingleFragment(2, false), getString(R.string.text_night_packets))
-                    adapter.addFragment(SingleFragment(3, false), getString(R.string.text_day_packets))
-                    adapter.addFragment(SingleFragment(4, false), getString(R.string.text_week_packets))
+                    adapter.addFragment(SingleFragment(0, false), getString(R.string.text_month_packets))
+                    adapter.addFragment(SingleFragment(1, false), getString(R.string.text_week_packets))
+                    adapter.addFragment(SingleFragment(2, false), getString(R.string.text_day_packets))
+                    adapter.addFragment(SingleFragment(3, false), getString(R.string.text_night_packets))
+                    adapter.addFragment(SingleFragment(4, false), getString(R.string.text_hour_packets))
+                    adapter.addFragment(SingleFragment(5, false), getString(R.string.text_tax_ix_packets))
+                    adapter.addFragment(SingleFragment(6, false), getString(R.string.text_infinite_packets))
+                    adapter.addFragment(SingleFragment(7, false), getString(R.string.text_modem_packets))
                 }
                 "4" -> {
-                    adapter.addFragment(SingleFragment(0, false), getString(R.string.text_day_packets))
-                    adapter.addFragment(SingleFragment(1, false), getString(R.string.text_packets))
-                    adapter.addFragment(SingleFragment(2, false), getString(R.string.text_night_packets))
-                    adapter.addFragment(SingleFragment(3, false), getString(R.string.text_night_dirve))
-                    adapter.addFragment(SingleFragment(4, false), getString(R.string.text_week_packets))
+                    adapter.addFragment(SingleFragment(0, false), getString(R.string.text_month_packets))
+                    adapter.addFragment(SingleFragment(1, false), getString(R.string.text_week_packets))
+                    adapter.addFragment(SingleFragment(2, false), getString(R.string.text_day_packets))
+                    adapter.addFragment(SingleFragment(3, false), getString(R.string.text_night_packets))
+                    adapter.addFragment(SingleFragment(4, false), getString(R.string.text_hour_packets))
+                    adapter.addFragment(SingleFragment(5, false), getString(R.string.text_tax_ix_packets))
+                    adapter.addFragment(SingleFragment(6, false), getString(R.string.text_infinite_packets))
+                    adapter.addFragment(SingleFragment(7, false), getString(R.string.text_modem_packets))
                 }
                 "5" -> {
-                    adapter.addFragment(SingleFragment(0, false), getString(R.string.text_week_packets))
-                    adapter.addFragment(SingleFragment(1, false), getString(R.string.text_packets))
-                    adapter.addFragment(SingleFragment(2, false), getString(R.string.text_night_packets))
-                    adapter.addFragment(SingleFragment(3, false), getString(R.string.text_night_dirve))
-                    adapter.addFragment(SingleFragment(4, false), getString(R.string.text_day_packets))
+                    adapter.addFragment(SingleFragment(0, false), getString(R.string.text_month_packets))
+                    adapter.addFragment(SingleFragment(1, false), getString(R.string.text_week_packets))
+                    adapter.addFragment(SingleFragment(2, false), getString(R.string.text_day_packets))
+                    adapter.addFragment(SingleFragment(3, false), getString(R.string.text_night_packets))
+                    adapter.addFragment(SingleFragment(4, false), getString(R.string.text_hour_packets))
+                    adapter.addFragment(SingleFragment(5, false), getString(R.string.text_tax_ix_packets))
+                    adapter.addFragment(SingleFragment(6, false), getString(R.string.text_infinite_packets))
+                    adapter.addFragment(SingleFragment(7, false), getString(R.string.text_modem_packets))
                 }
             }
         } else {
-            adapter.addFragment(SingleFragment(0, false), getString(R.string.text_packets))
-            adapter.addFragment(SingleFragment(1, false), getString(R.string.text_night_packets))
-            adapter.addFragment(SingleFragment(2, false), getString(R.string.text_night_dirve))
-            adapter.addFragment(SingleFragment(3, false), getString(R.string.text_day_packets))
-            adapter.addFragment(SingleFragment(4, false), getString(R.string.text_week_packets))
+            adapter.addFragment(SingleFragment(0, false), getString(R.string.text_month_packets))
+            adapter.addFragment(SingleFragment(1, false), getString(R.string.text_week_packets))
+            adapter.addFragment(SingleFragment(2, false), getString(R.string.text_day_packets))
+            adapter.addFragment(SingleFragment(3, false), getString(R.string.text_night_packets))
+            adapter.addFragment(SingleFragment(4, false), getString(R.string.text_hour_packets))
+            adapter.addFragment(SingleFragment(5, false), getString(R.string.text_tax_ix_packets))
+            adapter.addFragment(SingleFragment(6, false), getString(R.string.text_infinite_packets))
+            adapter.addFragment(SingleFragment(7, false), getString(R.string.text_modem_packets))
         }
+
         viewPagerNet.adapter = adapter
         tabs.setViewPager(viewPagerNet)
 

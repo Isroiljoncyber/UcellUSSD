@@ -19,7 +19,9 @@ class MinutesFragment : Fragment(R.layout.fragment_minutes) {
     private fun bindUI(){
         val adapter = FragmentAdapter(childFragmentManager)
         adapter.addFragment(SingleFragment(0, true), getString(R.string.text_minute))
-        adapter.addFragment(SingleFragment(1, true), getString(R.string.text_sms))
+        adapter.addFragment(SingleFragment(1, true), getString(R.string.text_sms_day))
+        adapter.addFragment(SingleFragment(2, true), getString(R.string.text_sms_month))
+        adapter.addFragment(SingleFragment(3, true), getString(R.string.text_sms_international))
         viewPagerNet.adapter = adapter
         tabs.setViewPager(viewPagerNet)
 

@@ -57,15 +57,19 @@ class PacketsAdapter(private val list: List<PacketModel>, private val sAction: S
 
         holder.cardBuy.setOnClickListener { sAction.itemClick(list[position].code) }
 
-        holder.tvCode.text = "${holder.itemView.context.getString(R.string.text_code)} ${UssdCodes.netPackets + list[position].code + dealerCodeHash}"
+//        holder.tvCode.text = "${holder.itemView.context.getString(R.string.text_code)} ${UssdCodes.netPackets + list[position].code + dealerCodeHash}"
+        // Some other codes don't need diller code so check it todo
+
+        holder.tvCode.text = "${holder.itemView.context.getString(R.string.text_code)} ${list[position].code + dealerCodeHash}"
 
         holder.imgShare.setOnClickListener {
             val intent = Intent(Intent.ACTION_SEND)
             intent.type = "text/plain"
             intent.putExtra(Intent.EXTRA_SUBJECT, holder.itemView.context.getString(R.string.app_name))
-            val message = UssdCodes.netPackets + list[position].code + dealerCodeHash
+//            val message = UssdCodes.netPackets + list[position].code + dealerCodeHash
+            val message = list[position].code + dealerCodeHash
             intent.putExtra(Intent.EXTRA_TEXT, message)
-            holder.itemView.context.startActivity(Intent.createChooser(intent, "Mobiuz"))
+            holder.itemView.context.startActivity(Intent.createChooser(intent, "Ucell"))
         }
     }
 }

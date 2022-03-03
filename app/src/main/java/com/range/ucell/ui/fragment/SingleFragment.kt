@@ -60,7 +60,8 @@ class SingleFragment(private val index: Int, private val isSMS: Boolean) : Scope
             if (isSMS){
                 if (index == 0){
                     ussdCall(UssdCodes.minuteCheck, it.context)
-                }else ussdCall(UssdCodes.smsCheck, it.context)
+                }else
+                    ussdCall(UssdCodes.smsCheck, it.context)
             }else{
                 when(index){
                     0 -> ussdCall(UssdCodes.packageCheck, it.context)

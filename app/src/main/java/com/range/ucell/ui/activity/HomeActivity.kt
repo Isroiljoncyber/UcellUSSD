@@ -33,9 +33,12 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class HomeActivity : AppCompatActivity(), KodeinAware {
+
     override val kodein by kodein()
+
     private val unitProvider: UnitProvider by instance()
     private val mobiuzRepository: MobiuzRepository by instance()
+
     private var navController: NavController? = null
 
     @SuppressLint("SimpleDateFormat")
