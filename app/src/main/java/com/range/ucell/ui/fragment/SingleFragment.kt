@@ -26,7 +26,8 @@ import com.range.ucell.utils.UssdCodes
 import com.range.ucell.utils.lazyDeferred
 import com.range.ucell.utils.ussdCall
 
-class SingleFragment(private val index: Int, private val isSMS: Boolean) : ScopedFragment(R.layout.fragment_single), SingleAction {
+class SingleFragment(private val index: Int, private val isSMS: Boolean) :
+    ScopedFragment(R.layout.fragment_single), SingleAction {
 
     private val mobiuzRepository: MobiuzRepository by instance()
 
@@ -44,29 +45,43 @@ class SingleFragment(private val index: Int, private val isSMS: Boolean) : Scope
         dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         dialog?.setContentView(R.layout.dialog_ask)
 
-        dialog?.findViewById<AppCompatTextView>(R.id.tvAsk)?.text = getString(R.string.confirm_service_ask)
+        dialog?.findViewById<AppCompatTextView>(R.id.tvAsk)?.text =
+            getString(R.string.confirm_service_ask)
         val btnCancel: ElasticButton = dialog?.findViewById(R.id.btnCancel)!!
         btnOk = dialog?.findViewById(R.id.btnOk)!!
 
         btnCancel.setOnClickListener { dialog?.dismiss() }
 
-        if (!isSMS){
-            if (index == 2 || index == 4){
+        if (!isSMS) {
+            if (index == 3 || index == 4 || index == 7) {
+                btnCheck.visibility = View.GONE
+            }
+        } else {
+            // to gone button from sms
+            if (index == 3) {
                 btnCheck.visibility = View.GONE
             }
         }
 
         btnCheck.setOnClickListener {
-            if (isSMS){
-                if (index == 0){
+            if (isSMS) {
+                // In this case we will check the sms and minutes
+                if (index == 0) {
                     ussdCall(UssdCodes.minuteCheck, it.context)
-                }else
-                    ussdCall(UssdCodes.smsCheck, it.context)
-            }else{
-                when(index){
-                    0 -> ussdCall(UssdCodes.packageCheck, it.context)
-                    1 -> ussdCall(UssdCodes.nightCheck, it.context)
-                    3 -> ussdCall(UssdCodes.miniCheck, it.context)
+                } else {
+                    when (index) {
+                        1 -> ussdCall(UssdCodes.smsCheckDay, it.context)
+                        2 -> ussdCall(UssdCodes.smsCheckMonth, it.context)
+                    }
+                }
+            } else {
+                // First of all we will check is it sms or no and then we make a call to them
+                when (index) {
+                    0 -> ussdCall(UssdCodes.packageMonth, it.context)
+                    1 -> ussdCall(UssdCodes.packageMonth, it.context)
+                    2 -> ussdCall(UssdCodes.packageMonth, it.context)
+                    5 -> ussdCall(UssdCodes.packageTASIX, it.context)
+                    6 -> ussdCall(UssdCodes.packageInfinity, it.context)
                 }
             }
         }
@@ -77,25 +92,28 @@ class SingleFragment(private val index: Int, private val isSMS: Boolean) : Scope
 
     private fun loadData() = launch {
         if (isSMS) {
-            lazyDeferred { mobiuzRepository.getMinutes() }.value.await().observe(viewLifecycleOwner, Observer {
-                if (it == null) return@Observer
-                if (it.isEmpty()) return@Observer
-                bindMinutesUI(it)
-            })
+            lazyDeferred { mobiuzRepository.getMinutes() }.value.await()
+                .observe(viewLifecycleOwner, Observer {
+                    if (it == null) return@Observer
+                    if (it.isEmpty()) return@Observer
+                    bindMinutesUI(it)
+                })
         } else {
-            lazyDeferred { mobiuzRepository.getPackets() }.value.await().observe(viewLifecycleOwner, Observer {
-                if (it == null) return@Observer
-                if (it.isEmpty()) return@Observer
-                bindPacketsUI(it)
-            })
+            lazyDeferred { mobiuzRepository.getPackets() }.value.await()
+                .observe(viewLifecycleOwner, Observer {
+                    if (it == null) return@Observer
+                    if (it.isEmpty()) return@Observer
+                    bindPacketsUI(it)
+                })
         }
     }
 
     private fun loadCode() = launch {
-        lazyDeferred { mobiuzRepository.getDealerCode() }.value.await().observe(viewLifecycleOwner, Observer {
-            if (it == null) return@Observer
-            dealerCode = it.code
-        })
+        lazyDeferred { mobiuzRepository.getDealerCode() }.value.await()
+            .observe(viewLifecycleOwner, Observer {
+                if (it == null) return@Observer
+                dealerCode = it.code
+            })
     }
 
     @SuppressLint("SetTextI18n")
@@ -143,15 +161,16 @@ class SingleFragment(private val index: Int, private val isSMS: Boolean) : Scope
         if (dealerCode != null) {
             dialog?.show()
             btnOk?.setOnClickListener {
-                if (isSMS){
-                    if (index == 1){
+                if (isSMS) {
+                    if (index == 1) {
                         ussdCall(code, it.context)
-                    }else{
-                        val ussd = UssdCodes.netPackets + code + "*1" + dealerCode + UssdCodes.encodedHash
+                    } else {
+                        val ussd =
+                            code + dealerCode + UssdCodes.encodedHash
                         ussdCall(ussd, it.context)
                     }
-                }else {
-                    val ussd = UssdCodes.netPackets + code + dealerCode + UssdCodes.encodedHash
+                } else {
+                    val ussd = code + dealerCode + UssdCodes.encodedHash
                     ussdCall(ussd, it.context)
                 }
                 dialog?.dismiss()

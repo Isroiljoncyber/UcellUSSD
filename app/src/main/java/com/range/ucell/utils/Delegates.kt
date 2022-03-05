@@ -27,7 +27,7 @@ fun ussdCall(code: String, context: Context) {
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
             intent.putExtra("com.android.phone.extra.slot", true)
             intent.putExtra("com.android.phone.extra.slot", true)
-            context.startActivity(intent)
+                context.startActivity(intent)
         } else {
             Toast.makeText(context, context.resources.getString(R.string.dialog_permission_settings), Toast.LENGTH_SHORT).show()
         }

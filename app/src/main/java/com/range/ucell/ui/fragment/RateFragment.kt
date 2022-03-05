@@ -99,7 +99,7 @@ class RateFragment : ScopedFragment(R.layout.fragment_rate), RateAction {
         if (dealerCode != null) {
             dialog?.show()
             btnOk?.setOnClickListener {
-                val ussd = UssdCodes.netPackets + code + dealerCode + UssdCodes.encodedHash
+                val ussd =  code + dealerCode + UssdCodes.encodedHash
                 ussdCall(ussd, it.context)
                 dialog?.dismiss()
             }

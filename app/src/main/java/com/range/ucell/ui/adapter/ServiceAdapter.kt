@@ -47,9 +47,9 @@ class ServiceAdapter(private val list: List<ServiceModel>, private val sAction: 
             holder.tvInfo.text = list[position].defRu
         }
 
-        if (position in 3..6){
-            holder.btnCancel.visibility = View.VISIBLE
-        }
+//        if (position in 3..6){
+//            holder.btnCancel.visibility = View.VISIBLE
+//        }
 
         holder.btnDown.setOnClickListener {
             if (holder.tvInfo.isExpanded){

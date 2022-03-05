@@ -91,8 +91,8 @@ class HomeFragment : ScopedFragment(R.layout.fragment_home) {
         dialogSale.setContentView(R.layout.dialog_sale)
 
         dialogSale.findViewById<ElasticCardView>(R.id.cardBuy).setOnClickListener {
-            val ussd = UssdCodes.netPackets + "2022" + dealerCode + UssdCodes.encodedHash
-            ussdCall(ussd, it.context)
+//            val ussd = "2022" + dealerCode + UssdCodes.encodedHash
+//            ussdCall(ussd, it.context)
         }
 
         val tvTelegram: AppCompatTextView = dialogMore.findViewById(R.id.tvTelegram)
