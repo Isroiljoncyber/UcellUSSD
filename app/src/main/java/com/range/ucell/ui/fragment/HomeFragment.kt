@@ -79,7 +79,6 @@ class HomeFragment : ScopedFragment(R.layout.fragment_home) {
 //            logo.setImageResource(R.drawable.ic_sale_ru)
         }
 
-
         val dialogMore = Dialog(requireContext(), R.style.Theme_AppCompat_Light_Dialog_Alert)
         dialogMore.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialogMore.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
@@ -105,7 +104,7 @@ class HomeFragment : ScopedFragment(R.layout.fragment_home) {
         val tvOtherApps: AppCompatTextView = dialogMore.findViewById(R.id.tvOtherApps)
 
         tvTelegram.setOnClickListener {
-            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://telegram.me/umsuzb2")))
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://telegram.me/ucell")))
         }
 
         tvWallet.setOnClickListener {
@@ -113,7 +112,7 @@ class HomeFragment : ScopedFragment(R.layout.fragment_home) {
         }
 
         tvExpenses.setOnClickListener {
-            ussdCall(UssdCodes.myDisCharge, it.context)
+//            ussdCall(UssdCodes.myDisCharge, it.context)
         }
 
         tvGraph.setOnClickListener {
@@ -180,7 +179,7 @@ class HomeFragment : ScopedFragment(R.layout.fragment_home) {
         }
 
         layoutUser.setOnClickListener {
-            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://ip.mobi.uz/selfcare/")))
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://my.ucell.uz/Account/Login?ReturnUrl=%2f")))
         }
 
         btnSend.setOnClickListener {
@@ -262,7 +261,7 @@ class HomeFragment : ScopedFragment(R.layout.fragment_home) {
                 }
 
             } else {
-                Log.i("BAG", "InstallStateUpdatedListener: state: " + it.installStatus());
+                Log.i("BAG", "InstallStateUpdatedListener: state: " + it.installStatus())
             }
         }
 
@@ -307,5 +306,4 @@ class HomeFragment : ScopedFragment(R.layout.fragment_home) {
         super.onStop()
         timer?.cancel()
     }
-
 }

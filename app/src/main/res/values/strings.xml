@@ -151,10 +151,10 @@
     <string name="text_traffic_count">Трафик</string>
     <string name="confirm_cancel_service_ask">Вы действительно хотите отключить данную услугу?</string>
     <string name="text_telegram_chanel">Telegram канал</string>
-    <string name="text_wallet">Последний платеж</string>
+    <string name="text_wallet">Проверить дату платежа</string>
     <string name="text_expenses">Мои расходы</string>
     <string name="text_residue">Остаток трафика</string>
-    <string name="text_my_number">Мой номер</string>
+    <string name="text_my_number">Кто я ?</string>
     <string name="text_my_all_numbers">Все мои номера</string>
     <string name="text_check_services">Проверка активных услуг</string>
     <string name="text_other_apps">Другие наши программы</string>

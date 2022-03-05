@@ -162,10 +162,10 @@
     <string name="text_traffic_count">Trafik hajmi</string>
     <string name="confirm_cancel_service_ask">Вы действительно хотите отключить данную услугу?</string>
     <string name="text_telegram_chanel">Telegram kanal</string>
-    <string name="text_wallet">Oxirgi to‘lov</string>
+    <string name="text_wallet">To`lov sanasini tekshirish</string>
     <string name="text_expenses">Mening xarajatlarim</string>
     <string name="text_residue">Internet qoldig‘i</string>
-    <string name="text_my_number">Mening raqamim</string>
+    <string name="text_my_number">Men kimman ?</string>
     <string name="text_my_all_numbers">Mening barcha raqamlarim</string>
     <string name="text_check_services">Yoqilgan xizmatlarni tekshirish</string>
     <string name="text_other_apps">Bizning boshqa dasturlarimiz</string>

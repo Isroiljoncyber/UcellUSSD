@@ -15,12 +15,12 @@ class UssdCodes {
 
         val balanceUssdRu = "*100*1$encodedHash"
         val balanceUssdUz = "*100*1$encodedHash"
-        val lastPayment = "*171*1*2$encodedHash"
+        val lastPayment = "*200$encodedHash"
         val myDisCharge = "*171*1*3$encodedHash"
-        val myNumber = "*150$encodedHash"
-        val allMyNumbers = "*151$encodedHash"
-        val RemainTrafBtn = "*102$encodedHash"
-        val CheckActServ = "*140$encodedHash"
+        val myNumber = "*450$encodedHash"
+        val allMyNumbers = "*360$encodedHash"
+        val RemainTrafBtn = "*107$encodedHash"
+        val CheckActServ = "*401$encodedHash"
 
         val getSettings = "*111*021$encodedHash"
         val turnOnMobileNet = "*111*0011$encodedHash"
