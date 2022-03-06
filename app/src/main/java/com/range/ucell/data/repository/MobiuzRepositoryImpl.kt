@@ -84,10 +84,10 @@ class MobiuzRepositoryImpl(
                 }
             } else isLoaded = false
 
-            val resCode = apiService.getDealerCode()
-            if (resCode.isSuccessful) {
-                mobiuzDao.upsertCode(resCode.body()!!)
-            } else isLoaded = false
+//            val resCode = apiService.getDealerCode()
+//            if (resCode.isSuccessful) {
+//                mobiuzDao.upsertCode(resCode.body()!!)
+//            } else isLoaded = false
 
             val response = apiService.getPacketsAsync()
             if (response.isSuccessful && response.body()!!.isNotEmpty()) {
