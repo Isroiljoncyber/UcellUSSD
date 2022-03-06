@@ -87,7 +87,7 @@ class SingleFragment(private val index: Int, private val isSMS: Boolean) :
         }
 
         loadData()
-        loadCode()
+//        loadCode()
     }
 
     private fun loadData() = launch {
@@ -158,24 +158,44 @@ class SingleFragment(private val index: Int, private val isSMS: Boolean) :
     }
 
     override fun itemClick(code: String) {
-        if (dealerCode != null) {
-            dialog?.show()
-            btnOk?.setOnClickListener {
-                if (isSMS) {
-                    if (index == 1) {
-                        ussdCall(code, it.context)
-                    } else {
-                        val ussd =
-                            code + dealerCode + UssdCodes.encodedHash
-                        ussdCall(ussd, it.context)
-                    }
-                } else {
-                    val ussd = code + dealerCode + UssdCodes.encodedHash
-                    ussdCall(ussd, it.context)
-                }
-                dialog?.dismiss()
-            }
-        } else loadCode()
+//        if (dealerCode != null) {
+//            dialog?.show()
+//            btnOk?.setOnClickListener {
+//                if (isSMS) {
+//                    if (index == 1) {
+//                        ussdCall(code, it.context)
+//                    } else {
+//                        val ussd =
+//                            code + dealerCode + UssdCodes.encodedHash
+//                        ussdCall(ussd, it.context)
+//                    }
+//                } else {
+//                    val ussd = code + dealerCode + UssdCodes.encodedHash
+//                    ussdCall(ussd, it.context)
+//                }
+//                dialog?.dismiss()
+//            }
+//        } else loadCode()
+        dialog?.show()
+        btnOk?.setOnClickListener {
+//            if (isSMS) {
+//                if (index == 1) {
+//                    val ussd =
+//                        code + UssdCodes.encodedHash
+//                    ussdCall(ussd, it.context)
+//                } else {
+//                    val ussd =
+//                        code + UssdCodes.encodedHash
+//                    ussdCall(ussd, it.context)
+//                }
+//            } else {
+//                val ussd = code + UssdCodes.encodedHash
+//                ussdCall(ussd, it.context)
+//            }
+            val ussd = code + UssdCodes.encodedHash
+            ussdCall(ussd, it.context)
+            dialog?.dismiss()
+        }
     }
 }
 

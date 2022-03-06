@@ -9,8 +9,11 @@ import com.range.ucell.data.db.entity.*
 import com.range.ucell.data.network.ApiService
 import com.range.ucell.data.pravider.UnitProvider
 
-class MobiuzRepositoryImpl( private val mobiuzDao: MobiuzDao, private val unitProvider: UnitProvider, private val apiService: ApiService)
-    : MobiuzRepository {
+class MobiuzRepositoryImpl(
+    private val mobiuzDao: MobiuzDao,
+    private val unitProvider: UnitProvider,
+    private val apiService: ApiService
+) : MobiuzRepository {
 
     override suspend fun getPackets(): LiveData<List<PacketModel>> {
         return withContext(Dispatchers.IO) {

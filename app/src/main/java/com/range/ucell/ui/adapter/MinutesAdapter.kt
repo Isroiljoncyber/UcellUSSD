@@ -57,13 +57,13 @@ class MinutesAdapter(private val list: List<MinutesModel>, private val sAction: 
         holder.tvPrice.text = list[position].price
 
         if (index != 0) {
-            holder.tvCode.text = "${holder.itemView.context.getString(R.string.text_code)} ${list[position].code}#"
+            holder.tvCode.text = "${holder.itemView.context.getString(R.string.text_code)} ${list[position].code} #"
         } else {
 //            holder.tvCode.text = "${holder.itemView.context.getString(R.string.text_code)} ${UssdCodes.netPackets + list[position].code + "*1" + dealerCodeHash}"
-            holder.tvCode.text = "${holder.itemView.context.getString(R.string.text_code)} ${list[position].code + "*1" + dealerCodeHash}"
+            holder.tvCode.text = "${holder.itemView.context.getString(R.string.text_code)} ${list[position].code + "#"}"
         }
 
-        holder.cardBuy.setOnClickListener { sAction.itemClick(list[position].code+ encodedHash) }
+        holder.cardBuy.setOnClickListener { sAction.itemClick(list[position].code) }
 
         holder.imgShare.setOnClickListener {
             val intent = Intent(Intent.ACTION_SEND)
@@ -74,7 +74,7 @@ class MinutesAdapter(private val list: List<MinutesModel>, private val sAction: 
                     list[position].code+"#"
                 else
 //                    UssdCodes.netPackets + list[position].code + "*1" + dealerCodeHash
-                    list[position].code + "*1" + dealerCodeHash
+                    list[position].code + "#"
             intent.putExtra(Intent.EXTRA_TEXT, message)
             holder.itemView.context.startActivity(Intent.createChooser(intent, "Mobiuz"))
         }

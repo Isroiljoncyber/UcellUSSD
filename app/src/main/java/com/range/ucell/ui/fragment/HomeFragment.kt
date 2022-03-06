@@ -34,7 +34,6 @@ import com.range.ucell.data.repository.MobiuzRepository
 import com.range.ucell.ui.adapter.AdsViewAdapter
 import com.range.ucell.ui.base.ScopedFragment
 import com.range.ucell.utils.UssdCodes
-import com.range.ucell.utils.UssdCodes.Companion.dealerCode
 import com.range.ucell.utils.lazyDeferred
 import com.range.ucell.utils.ussdCall
 import com.skydoves.elasticviews.ElasticCardView
@@ -42,7 +41,6 @@ import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.coroutines.launch
 import org.kodein.di.generic.instance
 import java.util.*
-
 
 class HomeFragment : ScopedFragment(R.layout.fragment_home) {
 

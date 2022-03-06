@@ -58,25 +58,27 @@ class RateFragment : ScopedFragment(R.layout.fragment_rate), RateAction {
 
         avi.show()
         loadData()
-        loadCode()
+//        loadCode()
     }
 
     private fun loadData() = launch {
-        lazyDeferred { mobiuzRepository.getRate() }.value.await().observe(viewLifecycleOwner, Observer {
-            if (it == null) return@Observer
-            if (it.isEmpty()) return@Observer
-            bindUi(it)
-        })
+        lazyDeferred { mobiuzRepository.getRate() }.value.await()
+            .observe(viewLifecycleOwner, Observer {
+                if (it == null) return@Observer
+                if (it.isEmpty()) return@Observer
+                bindUi(it)
+            })
     }
 
     private fun loadCode() = launch {
-        lazyDeferred { mobiuzRepository.getDealerCode() }.value.await().observe(viewLifecycleOwner, Observer {
-            if (it == null) return@Observer
-            dealerCode = it.code
-        })
+        lazyDeferred { mobiuzRepository.getDealerCode() }.value.await()
+            .observe(viewLifecycleOwner, Observer {
+                if (it == null) return@Observer
+                dealerCode = it.code
+            })
     }
 
-    private fun bindUi(list: List<RateModel>){
+    private fun bindUi(list: List<RateModel>) {
         recyclerRate.adapter = RateAdapter(list, this)
         avi.hide()
         if (App.sale != null && App.sale!!.code.isNotEmpty() && App.sale?.code != "no") {
@@ -96,14 +98,20 @@ class RateFragment : ScopedFragment(R.layout.fragment_rate), RateAction {
     }
 
     override fun itemClick(code: String) {
-        if (dealerCode != null) {
-            dialog?.show()
-            btnOk?.setOnClickListener {
-                val ussd =  code + dealerCode + UssdCodes.encodedHash
-                ussdCall(ussd, it.context)
-                dialog?.dismiss()
-            }
-        } else loadCode()
+//        if (dealerCode != null) {
+//            dialog?.show()
+//            btnOk?.setOnClickListener {
+//                val ussd =  code + dealerCode + UssdCodes.encodedHash
+//                ussdCall(ussd, it.context)
+//                dialog?.dismiss()
+//            }
+//        } else loadCode()
+        dialog?.show()
+        btnOk?.setOnClickListener {
+            val ussd = code + UssdCodes.encodedHash
+            ussdCall(ussd, it.context)
+            dialog?.dismiss()
+        }
     }
 
     override fun getLang(): Boolean {
@@ -111,7 +119,7 @@ class RateFragment : ScopedFragment(R.layout.fragment_rate), RateAction {
     }
 }
 
-interface RateAction{
+interface RateAction {
 
     fun itemClick(code: String)
 
