@@ -4,6 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Ucell-USSD.iml" filepath="$PROJECT_DIR$/.idea/modules/Ucell-USSD.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Ucell-USSD.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Ucell-USSD.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Ucell-USSD.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Ucell-USSD.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Ucell-USSD.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Ucell-USSD.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Ucell-USSD.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Ucell-USSD.app.unitTest.iml" />
     </modules>
   </component>
 </project>
