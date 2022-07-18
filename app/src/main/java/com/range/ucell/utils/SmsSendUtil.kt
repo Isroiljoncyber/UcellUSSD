@@ -1,16 +1,20 @@
 package com.range.ucell.utils
 
+import android.app.Activity
 import android.app.AlertDialog
+import android.app.PendingIntent
 import android.app.ProgressDialog
+import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
 import android.content.pm.PackageManager
-import android.net.Uri
 import android.os.Build
 import android.os.Handler
 import android.telephony.SmsManager
 import android.widget.Toast
 import com.range.ucell.R
+
 
 class SmsSendUtil(val context: Context) {
 
@@ -53,10 +57,6 @@ class SmsSendUtil(val context: Context) {
                     "OK"
                 ) { dialogInterface, i -> dialogInterface.dismiss() }
             try {
-//                if (code.length == 1)
-//                    phoneNumber = PhoneCodes.uzmobileNightPackageNumber
-//                else if (code.length <= 4)
-//                    phoneNumber = PhoneCodes.uzmobilePackageNumber
                 smsManager.sendTextMessage(centre_number, null, number, null, null)
                 builder.setMessage(context.resources.getString(R.string.text_dialog_progres_response))
             } catch (e: java.lang.Exception) {

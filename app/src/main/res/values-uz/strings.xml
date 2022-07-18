@@ -188,7 +188,7 @@
     <string name="text_langRu">RUS</string>
     <string name="text_langUz">UZB</string>
     <string name="text_dialog_number">Telefon raqamni kiriting:</string>
-    <string name="text_dialog_progres_response">So`rov qabul qilindi \10Iltimos javob kelishini kuting</string>
+    <string name="text_dialog_progres_response">So`rov qabul qilindi \nIltimos javob kelishini kuting</string>
     <string name="error_number">Telefon raqam noto`g`ri</string>
 
 
