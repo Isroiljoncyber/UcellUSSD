@@ -12,4 +12,5 @@
     <color name="darkGrey">#F1F1F1</color>
     <color name="colorYellow">#FCBD2C</color>
 
+    <color name="indicator">#a444eb38</color>
 </resources>

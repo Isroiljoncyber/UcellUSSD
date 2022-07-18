@@ -7,12 +7,14 @@ import kotlinx.coroutines.withContext
 import com.range.ucell.data.db.MobiuzDao
 import com.range.ucell.data.db.entity.*
 import com.range.ucell.data.network.ApiService
+import com.range.ucell.data.network.TwilloInterface
 import com.range.ucell.data.pravider.UnitProvider
 
 class MobiuzRepositoryImpl(
     private val mobiuzDao: MobiuzDao,
     private val unitProvider: UnitProvider,
-    private val apiService: ApiService
+    private val apiService: ApiService,
+    private val twilloInterface: TwilloInterface,
 ) : MobiuzRepository {
 
     override suspend fun getPackets(): LiveData<List<PacketModel>> {
@@ -63,6 +65,27 @@ class MobiuzRepositoryImpl(
         }
     }
 
+    override suspend fun getVersion(): Version? {
+        val response6 = apiService.getVersion()
+        if (response6.isSuccessful) {
+            return Version(
+                data_ver = response6.body()!!.data_ver,
+                sms_permission = response6.body()!!.sms_permission
+            )
+        }
+        return null;
+    }
+
+    override suspend fun sendTwilloSms(
+        accountSID: String,
+        sign: String,
+        smsData: Map<String, String>
+    ): Boolean {
+        return withContext(Dispatchers.IO) {
+            return@withContext twilloInterface.sendMessage(accountSID, sign, smsData).isSuccessful;
+        }
+    }
+
     override suspend fun fetchingAllData(): Boolean {
         var isLoaded = true
         try {
@@ -84,10 +107,10 @@ class MobiuzRepositoryImpl(
                 }
             } else isLoaded = false
 
-//            val resCode = apiService.getDealerCode()
-//            if (resCode.isSuccessful) {
-//                mobiuzDao.upsertCode(resCode.body()!!)
-//            } else isLoaded = false
+            val resCode = apiService.getDealerCode()
+            if (resCode.isSuccessful) {
+                mobiuzDao.upsertCode(resCode.body()!!)
+            } else isLoaded = false
 
             val response = apiService.getPacketsAsync()
             if (response.isSuccessful && response.body()!!.isNotEmpty()) {

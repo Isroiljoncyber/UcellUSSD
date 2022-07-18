@@ -134,7 +134,7 @@
     <string name="text_tax_ix_packets">TAX-IX</string>
     <string name="text_infinite_packets">Безлимитный</string>
     <string name="text_modem_packets">Модем</string>
-<!--    <string name="text_night_dirve">Ночной Drive</string>-->
+    <!--    <string name="text_night_dirve">Ночной Drive</string>-->
     <string name="text_sale_packets">Акция</string>
     <string name="sure_confirm">Вы уверены?</string>
     <string name="cancel">Отмена</string>
@@ -170,7 +170,15 @@
     <string name="text_check_rate">Проверка тарифа</string>
     <string name="text_check_balance">Проверка баланса</string>
     <string name="text_rate_type">месяц/день</string>
-    <string name="text_moth">месяц</string>
+    <string name="text_moth">месяц</string>.
+
+    <string name="text_month_packets_newSof">Месячный Sof(New)</string>
+    <string name="text_language">Выберите язык:</string>
+    <string name="text_langRu">РУС</string>
+    <string name="text_langUz">УЗБ</string>
+    <string name="text_dialog_number">Введите номер телефона:</string>
+    <string name="text_dialog_progres_response">Пожалуйста, дождитесь ответа</string>
+    <string name="error_number">Номер телефона указан неверно</string>
 
 
 </resources>

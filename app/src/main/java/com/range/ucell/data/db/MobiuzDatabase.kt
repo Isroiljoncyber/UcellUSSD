@@ -9,7 +9,7 @@ import com.range.ucell.data.db.entity.*
 
 @Database(
         entities = [LangModel::class, PacketModel::class, MinutesModel::class, RateModel::class, ServiceModel::class, DealerCode::class, SaleModel::class, BannerModel::class, UssdCodeModel::class],
-        version = 12
+        version = 13
 )
 abstract class MobiuzDatabase : RoomDatabase() {
 

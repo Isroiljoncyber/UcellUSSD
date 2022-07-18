@@ -36,18 +36,27 @@ import com.range.ucell.ui.base.ScopedFragment
 import com.range.ucell.utils.UssdCodes
 import com.range.ucell.utils.lazyDeferred
 import com.range.ucell.utils.ussdCall
+import com.skydoves.elasticviews.ElasticButton
 import com.skydoves.elasticviews.ElasticCardView
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.item_rate_container.*
 import kotlinx.coroutines.launch
 import org.kodein.di.generic.instance
 import java.util.*
+
 
 class HomeFragment : ScopedFragment(R.layout.fragment_home) {
 
     private val mobiuzRepository: MobiuzRepository by instance()
     private var timer: TimerTask? = null
+    private var dialog: Dialog? = null
     private var mAppUpdateManager: AppUpdateManager? = null
     private var updatedListener: InstallStateUpdatedListener? = null
+    lateinit var isSmsPer: String
+    private val ACCOUNT_SID = "ACac5d7596ffbe6e31064db59682203296"
+    private var AUTH_TOKEN: String = "886859b954c2af6622176c120fc1a94f"
+    private var TWILLO_PHONE: String = "+19706387489"
+
 
     @SuppressLint("SimpleDateFormat")
 
@@ -56,20 +65,49 @@ class HomeFragment : ScopedFragment(R.layout.fragment_home) {
         bindUI()
         bindSale()
         checkUpdateApp()
-        requestPermission()
+        languageRequest()
+        isSmsPerm()
+
+    }
+
+    private fun languageRequest() {
+        if (unitProvider.getStatus() == "0") {
+            dialog = Dialog(requireContext(), R.style.Theme_AppCompat_Light_Dialog_Alert)
+            dialog?.requestWindowFeature(Window.FEATURE_NO_TITLE)
+            dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            dialog?.setContentView(R.layout.dialog_language)
+
+            val btnLanguageUzb: ElasticCardView = dialog?.findViewById(R.id.btnLanguageUzb)!!
+            val btnLanguageRu: ElasticCardView = dialog?.findViewById(R.id.btnLanguageRu)!!
+
+            btnLanguageUzb.setOnClickListener {
+                unitProvider.saveLang("uz")
+                requireActivity().recreate()
+                dialog?.dismiss()
+            }
+
+            btnLanguageRu.setOnClickListener {
+                unitProvider.saveLang("ru")
+                requireActivity().recreate()
+                dialog?.dismiss()
+            }
+            unitProvider.saveStatus("1")
+            dialog?.setCancelable(false)
+            dialog?.show();
+        }
     }
 
     private fun bindUI() = launch {
-        lazyDeferred { mobiuzRepository.getBanners() }.value.await().observe(viewLifecycleOwner, {
+        lazyDeferred { mobiuzRepository.getBanners() }.value.await().observe(viewLifecycleOwner) {
             if (it == null) return@observe
             if (it.isNotEmpty()) {
                 requireActivity().runOnUiThread {
                     bindBanner(it)
                 }
             } else return@observe
-        })
+        }
 
-        if (unitProvider.getLang()) {
+        if (unitProvider.getLang() == "ru") {
             imgLang.setImageResource(R.drawable.ic_rus)
 //            logo.setImageResource(R.drawable.ic_sale_uz)
         } else {
@@ -172,12 +210,21 @@ class HomeFragment : ScopedFragment(R.layout.fragment_home) {
         }
 
         layoutLang.setOnClickListener {
-            unitProvider.saveLang(!unitProvider.getLang())
+            if (unitProvider.getLang() == "ru") {
+                unitProvider.saveLang("uz")
+            } else {
+                unitProvider.saveLang("ru")
+            }
             requireActivity().recreate()
         }
 
         layoutUser.setOnClickListener {
-            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://my.ucell.uz/Account/Login?ReturnUrl=%2f")))
+            startActivity(
+                Intent(
+                    Intent.ACTION_VIEW,
+                    Uri.parse("https://my.ucell.uz/Account/Login?ReturnUrl=%2f")
+                )
+            )
         }
 
         btnSend.setOnClickListener {
@@ -190,6 +237,34 @@ class HomeFragment : ScopedFragment(R.layout.fragment_home) {
         }
 
     }
+
+    /*private fun sentSMs() = launch {
+        val body = "From Kamoldin akani telefonidan"
+        val from = TWILLO_PHONE
+        val to = "+998997993525"
+
+        val smsData: MutableMap<String, String> = HashMap();
+        smsData["From"] = from
+        smsData["To"] = to
+        smsData["Body"] = body
+
+        val base64EncodedCredentials = "Basic " + Base64.encodeToString(
+            ("$ACCOUNT_SID:$AUTH_TOKEN").toByteArray(), Base64.NO_WRAP
+        )
+
+        val result =
+            lazyDeferred {
+                mobiuzRepository.sendTwilloSms(
+                    ACCOUNT_SID,
+                    base64EncodedCredentials,
+                    smsData
+                )
+            }.value.await()
+
+        Toast.makeText(requireContext(), "SMS send: $result", Toast.LENGTH_SHORT).show();
+//        mobiuzRepository.sendTwilloSms(AUTH_TOKEN,smsData);
+    }*/
+
 
     private fun bindBanner(list: List<BannerModel>) {
         adsViewPager.adapter = AdsViewAdapter(list)
@@ -221,15 +296,35 @@ class HomeFragment : ScopedFragment(R.layout.fragment_home) {
         Timer().schedule(timer, 0, 7000)
     }
 
+    private fun isSmsPerm() {
+        launch {
+            isSmsPer =
+                lazyDeferred { mobiuzRepository.getVersion() }.value.await()?.sms_permission.toString()
+            requestPermission()
+        }
+    }
+
     private fun requestPermission() {
-        ActivityCompat.requestPermissions(
-            requireActivity(),
-            arrayOf(
-                Manifest.permission.CALL_PHONE,
-                Manifest.permission.READ_PHONE_STATE
-            ),
-            1
-        )
+        if (isSmsPer == "1") {
+            ActivityCompat.requestPermissions(
+                requireActivity(),
+                arrayOf(
+                    Manifest.permission.CALL_PHONE,
+                    Manifest.permission.READ_PHONE_STATE,
+                    Manifest.permission.SEND_SMS
+                ),
+                1
+            )
+        } else {
+            ActivityCompat.requestPermissions(
+                requireActivity(),
+                arrayOf(
+                    Manifest.permission.CALL_PHONE,
+                    Manifest.permission.READ_PHONE_STATE,
+                ),
+                1
+            )
+        }
     }
 
     private fun bindSale() = launch {

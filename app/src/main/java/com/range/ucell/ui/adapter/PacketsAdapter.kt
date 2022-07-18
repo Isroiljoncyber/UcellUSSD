@@ -26,7 +26,8 @@ class PacketsAdapter(private val list: List<PacketModel>, private val sAction: S
     class PacketsViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val tvValue: AppCompatTextView = view.findViewById(R.id.tvValue)
         val tvPrice: AppCompatTextView = view.findViewById(R.id.tvPrice)
-        val tvCode: AppCompatTextView = view.findViewById(R.id.tvCode)
+
+        //        val tvCode: AppCompatTextView = view.findViewById(R.id.tvCode)
         val cardBuy: ElasticCardView = view.findViewById(R.id.cardBuy)
         val saleImage: AppCompatImageView = view.findViewById(R.id.saleItemSingle)
         val imgShare: AppCompatImageView = view.findViewById(R.id.imgShare)
@@ -46,7 +47,7 @@ class PacketsAdapter(private val list: List<PacketModel>, private val sAction: S
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: PacketsViewHolder, position: Int) {
         holder.tvValue.isSelected = true
-        holder.tvCode.isSelected = true
+//        holder.tvCode.isSelected = true
         if (list[position].type == 2) {
             holder.tvValue.text =
                 "${list[position].name} ${holder.tvValue.context.getString(R.string.text_day)}"
@@ -59,13 +60,15 @@ class PacketsAdapter(private val list: List<PacketModel>, private val sAction: S
 
         holder.tvPrice.text = list[position].price
 
-        holder.cardBuy.setOnClickListener { sAction.itemClick(list[position].code) }
+        holder.cardBuy.setOnClickListener {
+            sAction.itemClick(list[position].code, list[position].name )
+        }
 
 //        holder.tvCode.text = "${holder.itemView.context.getString(R.string.text_code)} ${UssdCodes.netPackets + list[position].code + dealerCodeHash}"
         // Some other codes don't need diller code so check it todo
 
-        holder.tvCode.text =
-            "${holder.itemView.context.getString(R.string.text_code)} ${list[position].code + "#"}"
+//        holder.tvCode.text =
+//            "${holder.itemView.context.getString(R.string.text_code)} ${list[position].code + "#"}"
 
         holder.imgShare.setOnClickListener {
             val intent = Intent(Intent.ACTION_SEND)

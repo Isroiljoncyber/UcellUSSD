@@ -29,7 +29,6 @@ import kotlinx.coroutines.launch
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.kodein
 import org.kodein.di.generic.instance
-import java.text.SimpleDateFormat
 import java.util.*
 
 class HomeActivity : AppCompatActivity(), KodeinAware {
@@ -41,8 +40,6 @@ class HomeActivity : AppCompatActivity(), KodeinAware {
 
     private var navController: NavController? = null
 
-    @SuppressLint("SimpleDateFormat")
-    private var simpleDate = SimpleDateFormat("dd.MM.yy")
     private var timer: CountDownTimer? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -66,11 +63,13 @@ class HomeActivity : AppCompatActivity(), KodeinAware {
     @SuppressLint("SimpleDateFormat")
     private fun loadData() {
         GlobalScope.launch(Dispatchers.IO) {
-            if (unitProvider.getSaveDate() != simpleDate.format(Date())) {
+            val version = mobiuzRepository.getVersion()!!.data_ver;
+            if (unitProvider.getVersion() != version) {
                 if (unitProvider.isOnline()) {
                     bindToast(lazyDeferred { mobiuzRepository.fetchingAllData() }.value.await())
                 }
                 App.isLoaded = false
+                unitProvider.saveVersion(version)
             }
         }
     }
@@ -105,12 +104,13 @@ class HomeActivity : AppCompatActivity(), KodeinAware {
     private fun bindToast(isLoaded: Boolean) {
         runOnUiThread {
             if (isLoaded) {
-                Toast.makeText(this, getString(R.string.text_data_loaded), Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.text_data_loaded), Toast.LENGTH_SHORT)
+                    .show()
             } else {
                 Toast.makeText(
-                        this,
-                        getString(R.string.text_data_loaded_err),
-                        Toast.LENGTH_LONG
+                    this,
+                    getString(R.string.text_data_loaded_err),
+                    Toast.LENGTH_LONG
                 ).show()
             }
         }
@@ -118,7 +118,9 @@ class HomeActivity : AppCompatActivity(), KodeinAware {
     }
 
     override fun attachBaseContext(newBase: Context) {
-        val locale = if (PreferenceManager.getDefaultSharedPreferences(newBase).getBoolean("LANGUAGE", false)) {
+        val locale = if (PreferenceManager.getDefaultSharedPreferences(newBase)
+                .getString("LANGUAGE", "") == "uz"
+        ) {
             Locale("uz", "UZ")
         } else {
             Locale("ru", "RU")

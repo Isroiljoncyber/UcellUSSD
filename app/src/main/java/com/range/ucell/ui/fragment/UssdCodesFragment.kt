@@ -37,7 +37,7 @@ class UssdCodesFragment : ScopedFragment(R.layout.fragment_ussd_codes) {
     }
 
     private fun bindUI(list: List<UssdCodeModel>) {
-        recyclerUssd.adapter = UssdAdapter(list, unitProvider.getLang())
+        recyclerUssd.adapter = UssdAdapter(list, unitProvider.getLang()=="uz")
         avi.hide()
     }
 

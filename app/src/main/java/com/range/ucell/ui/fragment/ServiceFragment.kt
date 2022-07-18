@@ -75,7 +75,7 @@ class ServiceFragment : ScopedFragment(R.layout.fragment_service), ServiceAction
         avi.hide()
 
         btnCheck.setOnClickListener {
-            if (unitProvider.getLang()) {
+            if (unitProvider.getLang() == "ru") {
                 ussdCall(UssdCodes.balanceUssdRu, it.context)
             } else
                 ussdCall(UssdCodes.balanceUssdUz, it.context)
@@ -113,7 +113,7 @@ class ServiceFragment : ScopedFragment(R.layout.fragment_service), ServiceAction
     }
 
     override fun getLang(): Boolean {
-        return unitProvider.getLang()
+        return unitProvider.getLang() == "uz"
     }
 
 }

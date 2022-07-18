@@ -1,8 +1,9 @@
 package com.range.ucell.data.network
 
+import com.range.ucell.data.db.entity.*
 import retrofit2.Response
 import retrofit2.http.GET
-import com.range.ucell.data.db.entity.*
+
 
 interface ApiService {
 
@@ -26,6 +27,9 @@ interface ApiService {
 
     @GET("dealerCode.json")
     suspend fun getDealerCode(): Response<DealerCode>
+
+    @GET("version.json")
+    suspend fun getVersion(): Response<Version>
 
     @GET("banner.json")
     suspend fun getBanners(): Response<BannerResponse>

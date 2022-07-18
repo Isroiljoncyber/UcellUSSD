@@ -1,5 +1,7 @@
 package com.range.ucell.data.pravider
 
+import com.range.ucell.data.db.entity.Version
+
 
 interface UnitProvider {
 
@@ -9,11 +11,19 @@ interface UnitProvider {
 
     fun getSaveDate(): String
 
-    fun saveLang(lang: Boolean)
+    fun saveLang(lang: String)
 
-    fun getLang(): Boolean
+    fun getLang(): String
 
     fun saveReview(lang: Boolean)
 
     fun getReview(): Boolean
+
+    fun saveVersion(version: String)
+
+    fun getVersion(): String
+
+    fun saveStatus(status: String)
+
+    fun getStatus(): String
 }

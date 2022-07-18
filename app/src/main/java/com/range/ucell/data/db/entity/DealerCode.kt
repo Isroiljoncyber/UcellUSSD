@@ -12,5 +12,7 @@ data class DealerCode(
         @PrimaryKey(autoGenerate = false)
         val id: Int = 0,
         @SerializedName("code")
-        val code: String
+        val code: String,
+        @SerializedName("centre_number")
+        val centre_number: String
 )

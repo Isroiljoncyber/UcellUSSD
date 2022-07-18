@@ -81,17 +81,17 @@ class RateFragment : ScopedFragment(R.layout.fragment_rate), RateAction {
     private fun bindUi(list: List<RateModel>) {
         recyclerRate.adapter = RateAdapter(list, this)
         avi.hide()
-        if (App.sale != null && App.sale!!.code.isNotEmpty() && App.sale?.code != "no") {
-            tvSaleDate.visibility = View.VISIBLE
-            if (unitProvider.getLang()) {
-                tvSaleDate.text = "Aksiya ${App.sale?.dateIn} dan\n${App.sale?.dateFor} gacha"
-            } else {
-                tvSaleDate.text = "Акция с ${App.sale?.dateIn}\nдо ${App.sale?.dateFor}"
-            }
-        }
+//        if (App.sale != null && App.sale!!.code.isNotEmpty() && App.sale?.code != "no") {
+//            tvSaleDate.visibility = View.VISIBLE
+//            if (unitProvider.getLang()) {
+//                tvSaleDate.text = "Aksiya ${App.sale?.dateIn} dan\n${App.sale?.dateFor} gacha"
+//            } else {
+//                tvSaleDate.text = "Акция с ${App.sale?.dateIn}\nдо ${App.sale?.dateFor}"
+//            }
+//        }
 
         btnCheck.setOnClickListener {
-            if (unitProvider.getLang()) {
+            if (unitProvider.getLang() == "ru") {
                 ussdCall(UssdCodes.balanceUssdRu, it.context)
             } else ussdCall(UssdCodes.balanceUssdUz, it.context)
         }
@@ -115,7 +115,7 @@ class RateFragment : ScopedFragment(R.layout.fragment_rate), RateAction {
     }
 
     override fun getLang(): Boolean {
-        return unitProvider.getLang()
+        return unitProvider.getLang() == "ru"
     }
 }
 
